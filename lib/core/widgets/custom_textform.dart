@@ -94,136 +94,133 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: TextFormField(
-        onFieldSubmitted: widget.onFieldSubmitted,
-        validator: widget.validator,
-        controller: widget.controller,
-        enabled: widget.isEditable,
-        inputFormatters: widget.inputFormatters,
-        textInputAction: TextInputAction.next,
-        cursorColor: AppColors.primary,
-        readOnly: widget.readOnly,
-        maxLength: widget.maxLength,
-        onChanged: widget.onChanged,
-        focusNode: widget.focusNode,
-        autofocus: widget.autoFoucs,
-        style: TextStyle(
-          fontSize: 14.sp,
-          fontWeight: FontWeight.w400,
-          fontFamily: AppStrings.fontFamily,
-          color: Colors.black,
-        ),
-        initialValue: widget.initialValue,
-        obscureText: (widget.hasPassword) ? showPassword : widget.hasPassword,
-        maxLines: (widget.isNotes) ? 3 : 1,
-        textAlign:
-            // (widget.centerText)
-            //     ? TextAlign.center
-            //     : widget.isPhoneCode
-            //         ?
-            TextAlign.right
-        // : TextAlign.right
-        ,
-        keyboardType: (widget.isEmail)
-            ? TextInputType.emailAddress
-            : (widget.isMobile)
-                ? TextInputType.phone
-                : widget.textInputType ?? TextInputType.text,
-        decoration: InputDecoration(
-            hintText: widget.hint,
-            hintStyle: TextStyle(
-              color: widget.hintColor,
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w400,
-            ),
-            counter: const SizedBox(),
-            contentPadding: widget.contentPadding ??
-                EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
-            enabledBorder: (!widget.hasBorder)
-                ? InputBorder.none
-                : OutlineInputBorder(
-                    borderRadius:
-                        widget.borderRadius ?? BorderRadius.circular(65.sp),
-                    borderSide: BorderSide(
-                        color: widget.borderColor ?? AppColors.hint)),
-            disabledBorder: (!widget.hasBorder)
-                ? InputBorder.none
-                : OutlineInputBorder(
-                    borderRadius:
-                        widget.borderRadius ?? BorderRadius.circular(65.sp),
-                    borderSide: BorderSide(
-                        color: widget.borderColor ?? AppColors.hint)),
-            border: (!widget.hasBorder)
-                ? InputBorder.none
-                : OutlineInputBorder(
-                    borderRadius:
-                        widget.borderRadius ?? BorderRadius.circular(65.sp),
-                    borderSide: BorderSide(
-                        color: widget.borderColor ?? AppColors.hint)),
-            focusedBorder: (!widget.hasBorder)
-                ? InputBorder.none
-                : OutlineInputBorder(
-                    borderRadius:
-                        widget.borderRadius ?? BorderRadius.circular(65.sp),
-                    borderSide: BorderSide(
-                        color: widget.borderColor ?? AppColors.hint)),
-            labelText: widget.lablel,
-            labelStyle: TextStyle(
-                color: widget.lableColor,
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w400),
-            prefixIcon: (!widget.isPhoneCode) ? widget.icon : null,
-            fillColor: (widget.filledColor == null)
-                ? Colors.transparent
-                : widget.filledColor,
-            filled: true,
-            // suffixIconConstraints:
-            //     BoxConstraints(maxWidth: widget.maxWidthSuffixIcon!),
-
-            suffixIcon: (widget.isPhoneCode)
-                ? Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      SizedBox(
-                        height: 20,
-                        child: VerticalDivider(
-                          color: AppColors.hint,
-                          thickness: 1.5,
-                        ),
-                      ),
-                      Text(
-                        '2+',
-                        style: TextStyle(
-                          fontSize: 22.sp,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.hint,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 17.w,
-                      ),
-                    ],
-                  )
-                : (widget.hasPassword)
-                    ? InkWell(
-                        onTap: () {
-                          showPassword = !showPassword;
-                          setState(() {});
-                        },
-                        child: (!showPassword)
-                            ? Icon(
-                                Icons.visibility,
-                                color: AppColors.primary,
-                              )
-                            : Icon(
-                                Icons.visibility_off,
-                                color: AppColors.primary,
-                              ),
-                      )
-                    : widget.sufficIcon),
+    return TextFormField(
+      onFieldSubmitted: widget.onFieldSubmitted,
+      validator: widget.validator,
+      controller: widget.controller,
+      enabled: widget.isEditable,
+      inputFormatters: widget.inputFormatters,
+      textInputAction: TextInputAction.next,
+      cursorColor: AppColors.primary,
+      readOnly: widget.readOnly,
+      maxLength: widget.maxLength,
+      onChanged: widget.onChanged,
+      focusNode: widget.focusNode,
+      autofocus: widget.autoFoucs,
+      style: TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w400,
+        fontFamily: AppStrings.fontFamily,
+        color: Colors.black,
       ),
+      initialValue: widget.initialValue,
+      obscureText: (widget.hasPassword) ? showPassword : widget.hasPassword,
+      maxLines: (widget.isNotes) ? 3 : 1,
+      textAlign:
+          // (widget.centerText)
+          //     ? TextAlign.center
+          //     : widget.isPhoneCode
+          //         ?
+          TextAlign.right
+      // : TextAlign.right
+      ,
+      keyboardType: (widget.isEmail)
+          ? TextInputType.emailAddress
+          : (widget.isMobile)
+              ? TextInputType.phone
+              : widget.textInputType ?? TextInputType.text,
+      decoration: InputDecoration(
+          hintText: widget.hint,
+          hintStyle: TextStyle(
+            color: widget.hintColor,
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w400,
+          ),
+          counter: const SizedBox(),
+          contentPadding: widget.contentPadding ??
+              EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
+          enabledBorder: (!widget.hasBorder)
+              ? InputBorder.none
+              : OutlineInputBorder(
+                  borderRadius:
+                      widget.borderRadius ?? BorderRadius.circular(65.sp),
+                  borderSide:
+                      BorderSide(color: widget.borderColor ?? AppColors.hint)),
+          disabledBorder: (!widget.hasBorder)
+              ? InputBorder.none
+              : OutlineInputBorder(
+                  borderRadius:
+                      widget.borderRadius ?? BorderRadius.circular(65.sp),
+                  borderSide:
+                      BorderSide(color: widget.borderColor ?? AppColors.hint)),
+          border: (!widget.hasBorder)
+              ? InputBorder.none
+              : OutlineInputBorder(
+                  borderRadius:
+                      widget.borderRadius ?? BorderRadius.circular(65.sp),
+                  borderSide:
+                      BorderSide(color: widget.borderColor ?? AppColors.hint)),
+          focusedBorder: (!widget.hasBorder)
+              ? InputBorder.none
+              : OutlineInputBorder(
+                  borderRadius:
+                      widget.borderRadius ?? BorderRadius.circular(65.sp),
+                  borderSide:
+                      BorderSide(color: widget.borderColor ?? AppColors.hint)),
+          labelText: widget.lablel,
+          labelStyle: TextStyle(
+              color: widget.lableColor,
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w400),
+          prefixIcon: (!widget.isPhoneCode) ? widget.icon : null,
+          fillColor: (widget.filledColor == null)
+              ? Colors.transparent
+              : widget.filledColor,
+          filled: true,
+          // suffixIconConstraints:
+          //     BoxConstraints(maxWidth: widget.maxWidthSuffixIcon!),
+
+          suffixIcon: (widget.isPhoneCode)
+              ? Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SizedBox(
+                      height: 20,
+                      child: VerticalDivider(
+                        color: AppColors.hint,
+                        thickness: 1.5,
+                      ),
+                    ),
+                    Text(
+                      '2+',
+                      style: TextStyle(
+                        fontSize: 22.sp,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.hint,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 17.w,
+                    ),
+                  ],
+                )
+              : (widget.hasPassword)
+                  ? InkWell(
+                      onTap: () {
+                        showPassword = !showPassword;
+                        setState(() {});
+                      },
+                      child: (!showPassword)
+                          ? Icon(
+                              Icons.visibility,
+                              color: AppColors.primary,
+                            )
+                          : Icon(
+                              Icons.visibility_off,
+                              color: AppColors.primary,
+                            ),
+                    )
+                  : widget.sufficIcon),
     );
   }
 }

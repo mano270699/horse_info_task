@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:horse_info/core/utils/app_colors.dart';
 
 import 'config/routes/app_routes.dart';
-import 'config/themes/app_theme.dart';
+
 import 'core/utils/app_strings.dart';
-import 'core/utils/constants.dart';
 
 class HorseInfoApp extends StatelessWidget {
   const HorseInfoApp({Key? key}) : super(key: key);
@@ -19,8 +19,8 @@ class HorseInfoApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               backgroundColor: Colors.white,
-              // primaryColor: ColorsUtils.PRIMARY,
-              // fontFamily: Constants.fontFamily,
+              primaryColor: AppColors.primary,
+              fontFamily: AppStrings.fontFamily,
             ),
             title: AppStrings.appName,
             initialRoute: Routes.INITIAL,

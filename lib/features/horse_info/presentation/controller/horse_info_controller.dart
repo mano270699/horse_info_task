@@ -9,7 +9,10 @@ class HorseInfoController extends GetxController {
   var currentSelectedYearValue = "سنة".obs;
   var currentSelectedColorValue = "اسود".obs;
   var months = ["شهر", "01", "02"];
+  var currentSelectednumValue = "1".obs;
+  var number = ["1", "2", "3"];
   var isMealSelected = true.obs;
+  var isChecked = false.obs;
   var year = ["سنة", "2000", "2001"];
   var colors = ["اسود", "أحمر", "أبيض"];
   @override

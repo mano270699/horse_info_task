@@ -133,7 +133,7 @@ class CustomOutlinedButton extends StatelessWidget {
           backgroundColor: MaterialStateProperty.all(backgroundColor),
         ),
         onPressed: pressed,
-        Widget: Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             (icon == null)
